@@ -47,7 +47,7 @@ public class PatientInfoFileRepository implements PatientInfoRepository {
             while (scanner.hasNextLine()) {
                 PatientInfo existsValue = mapper.readValue(scanner.nextLine(), PatientInfo.class);
                 if (isPatientExist(patientInfo, existsValue)) {
-                    throw new RuntimeException("Patient already exists");
+                    //throw new RuntimeException("Patient already exists");
                 }
             }
             String serializedPatientInfo = mapper.writeValueAsString(info);
